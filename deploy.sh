@@ -1,17 +1,15 @@
 #!/bin/bash
 
+# 清理dist目录
+echo "Cleaning dist directory..."
+rm -rf dist
+
 # 构建项目
 echo "Building project..."
 npm run build
 
 # 进入dist目录
 cd dist
-
-# 清理git仓库（如果存在）
-if [ -d ".git" ]; then
-  echo "Cleaning existing git repository..."
-  rm -rf .git
-fi
 
 # 初始化新的git仓库
 echo "Initializing git repository..."

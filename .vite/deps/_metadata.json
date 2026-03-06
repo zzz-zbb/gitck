@@ -7,19 +7,19 @@
     "react": {
       "src": "../../node_modules/react/index.js",
       "file": "react.js",
-      "fileHash": "afedbd75",
+      "fileHash": "be1f2f6f",
       "needsInterop": true
     },
     "react-dom/client": {
       "src": "../../node_modules/react-dom/client.js",
       "file": "react-dom_client.js",
-      "fileHash": "c4b811fd",
+      "fileHash": "579cf242",
       "needsInterop": true
     },
     "echarts": {
       "src": "../../node_modules/echarts/index.js",
       "file": "echarts.js",
-      "fileHash": "3d169d7d",
+      "fileHash": "47b67614",
       "needsInterop": false
     }
   },
