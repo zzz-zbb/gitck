@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import * as echarts from 'echarts';
 
 function App() {
   const [activeTab, setActiveTab] = useState('tourism');
@@ -28,9 +27,10 @@ function App() {
   };
 
   // 初始化客流统计分析图表
-  const initPassengerFlowChart = () => {
+  const initPassengerFlowChart = async () => {
     if (passengerFlowChartRef.current) {
-      const chart = echarts.init(passengerFlowChartRef.current);
+      const echarts = await import('echarts');
+      const chart = echarts.default.init(passengerFlowChartRef.current);
       const option = {
         tooltip: {
           trigger: 'axis',
@@ -80,7 +80,7 @@ function App() {
             barWidth: '60%',
             itemStyle: {
               borderRadius: [8, 8, 0, 0],
-              color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [
+              color: new echarts.default.graphic.LinearGradient(0, 1, 0, 0, [
                 {
                   offset: 0,
                   color: 'rgba(0, 0, 0, 0.3)'
@@ -116,9 +116,10 @@ function App() {
   };
 
   // 初始化消费分析图表
-  const initConsumptionChart = () => {
+  const initConsumptionChart = async () => {
     if (consumptionChartRef.current) {
-      const chart = echarts.init(consumptionChartRef.current);
+      const echarts = await import('echarts');
+      const chart = echarts.default.init(consumptionChartRef.current);
       const option = {
         tooltip: {
           trigger: 'axis',
@@ -168,7 +169,7 @@ function App() {
             barWidth: '60%',
             itemStyle: {
               borderRadius: [8, 8, 0, 0],
-              color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [
+              color: new echarts.default.graphic.LinearGradient(0, 1, 0, 0, [
                 {
                   offset: 0,
                   color: 'rgba(0, 0, 0, 0.3)'
@@ -204,9 +205,10 @@ function App() {
   };
 
   // 初始化客流来源地分析图表
-  const initSourceChart = () => {
+  const initSourceChart = async () => {
     if (sourceChartRef.current) {
-      const chart = echarts.init(sourceChartRef.current);
+      const echarts = await import('echarts');
+      const chart = echarts.default.init(sourceChartRef.current);
       const option = {
         tooltip: {
           trigger: 'axis',
@@ -256,7 +258,7 @@ function App() {
             barWidth: '60%',
             itemStyle: {
               borderRadius: [8, 8, 0, 0],
-              color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [
+              color: new echarts.default.graphic.LinearGradient(0, 1, 0, 0, [
                 {
                   offset: 0,
                   color: 'rgba(0, 0, 0, 0.3)'
@@ -292,9 +294,10 @@ function App() {
   };
 
   // 初始化线上渗透率图表
-  const initPenetrationChart = () => {
+  const initPenetrationChart = async () => {
     if (penetrationChartRef.current) {
-      const chart = echarts.init(penetrationChartRef.current);
+      const echarts = await import('echarts');
+      const chart = echarts.default.init(penetrationChartRef.current);
       const option = {
         tooltip: {
           trigger: 'axis'
@@ -345,7 +348,7 @@ function App() {
               shadowBlur: 10
             },
             areaStyle: {
-              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+              color: new echarts.default.graphic.LinearGradient(0, 0, 0, 1, [
                 {
                   offset: 0,
                   color: 'rgba(0, 242, 255, 0.3)'
@@ -382,9 +385,10 @@ function App() {
   };
 
   // 初始化AR/VR体验项目图表
-  const initArvrChart = () => {
+  const initArvrChart = async () => {
     if (arvrChartRef.current) {
-      const chart = echarts.init(arvrChartRef.current);
+      const echarts = await import('echarts');
+      const chart = echarts.default.init(arvrChartRef.current);
       const option = {
         tooltip: {
           trigger: 'item'
@@ -442,9 +446,10 @@ function App() {
   };
 
   // 初始化重点文物监测图表
-  const initCulturalRelicsChart = () => {
+  const initCulturalRelicsChart = async () => {
     if (culturalRelicsChartRef.current) {
-      const chart = echarts.init(culturalRelicsChartRef.current);
+      const echarts = await import('echarts');
+      const chart = echarts.default.init(culturalRelicsChartRef.current);
       const option = {
         tooltip: {
           trigger: 'axis',
@@ -494,7 +499,7 @@ function App() {
             barWidth: '60%',
             itemStyle: {
               borderRadius: [8, 8, 0, 0],
-              color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [
+              color: new echarts.default.graphic.LinearGradient(0, 1, 0, 0, [
                 {
                   offset: 0,
                   color: 'rgba(0, 0, 0, 0.3)'
@@ -530,9 +535,10 @@ function App() {
   };
 
   // 初始化数字文创产品图表
-  const initCulturalProductsChart = () => {
+  const initCulturalProductsChart = async () => {
     if (culturalProductsChartRef.current) {
-      const chart = echarts.init(culturalProductsChartRef.current);
+      const echarts = await import('echarts');
+      const chart = echarts.default.init(culturalProductsChartRef.current);
       const option = {
         tooltip: {
           trigger: 'axis',
@@ -582,7 +588,7 @@ function App() {
             barWidth: '60%',
             itemStyle: {
               borderRadius: [8, 8, 0, 0],
-              color: new echarts.graphic.LinearGradient(0, 1, 0, 0, [
+              color: new echarts.default.graphic.LinearGradient(0, 1, 0, 0, [
                 {
                   offset: 0,
                   color: 'rgba(0, 0, 0, 0.3)'
@@ -618,9 +624,10 @@ function App() {
   };
 
   // 初始化文创产品图表
-  const initIpInfluenceChart = () => {
+  const initIpInfluenceChart = async () => {
     if (ipInfluenceChartRef.current) {
-      const chart = echarts.init(ipInfluenceChartRef.current);
+      const echarts = await import('echarts');
+      const chart = echarts.default.init(ipInfluenceChartRef.current);
       const option = {
         tooltip: {
           trigger: 'axis',
@@ -671,7 +678,7 @@ function App() {
             barWidth: '60%',
             itemStyle: {
               borderRadius: [0, 8, 8, 0],
-              color: new echarts.graphic.LinearGradient(1, 0, 0, 0, [
+              color: new echarts.default.graphic.LinearGradient(1, 0, 0, 0, [
                 {
                   offset: 0,
                   color: 'rgba(0, 0, 0, 0.3)'
@@ -707,9 +714,10 @@ function App() {
   };
 
   // 初始化游客通勤方式分析图表
-  const initCommuteChart = () => {
+  const initCommuteChart = async () => {
     if (commuteChartRef.current) {
-      const chart = echarts.init(commuteChartRef.current);
+      const echarts = await import('echarts');
+      const chart = echarts.default.init(commuteChartRef.current);
       const option = {
         tooltip: {
           trigger: 'item'
@@ -769,16 +777,22 @@ function App() {
 
   // 初始化图表
   useEffect(() => {
+    const initCharts = async () => {
+      await Promise.all([
+        initPassengerFlowChart(),
+        initConsumptionChart(),
+        initSourceChart(),
+        initPenetrationChart(),
+        initArvrChart(),
+        initCulturalProductsChart(),
+        initCulturalRelicsChart(),
+        initIpInfluenceChart(),
+        initCommuteChart()
+      ]);
+    };
+
     setTimeout(() => {
-      initPassengerFlowChart();
-      initConsumptionChart();
-      initSourceChart();
-      initPenetrationChart();
-      initArvrChart();
-      initCulturalProductsChart();
-      initCulturalRelicsChart();
-      initIpInfluenceChart();
-      initCommuteChart();
+      initCharts();
     }, 100);
   }, [activeTab]);
 
